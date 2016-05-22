@@ -1,8 +1,10 @@
 class Alphabet
-  attr_reader :alphabet
+  
+  attr_reader :trans_braille
 
   def initialize
-    @alphabet =  {
+
+    @trans_braille =  {
       "a" => ["0.", "..", ".."], "b" => ["0.", "0.", ".."],
       "c" => ["00", "..", ".."], "d" => ["00", ".0", ".."],
       "e" => ["0.", ".0", ".."], "f" => ["00", "0.", ".."],

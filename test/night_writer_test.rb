@@ -41,7 +41,7 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_for_space_in_the_input
-binding.pry
+    # binding.pry
     assert_equal [["..", "..", ".."]], @file.encode_to_braille(" ")
   end
 
