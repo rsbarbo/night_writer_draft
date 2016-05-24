@@ -1,6 +1,7 @@
 class FileReader
-  def read
-    filename = ARGV[0]
-    File.read(filename).chomp
+
+  def self.read(input_read)
+    File.read(input_read).chomp
   end
+
 end

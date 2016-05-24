@@ -18,6 +18,7 @@ class NightWriter
   #This method will call all the additional methods.
   def encode_to_braille(input)
     braille_array = check_input_vs_alphabet(input.split(''))
+
   end
 
   #cnvrt strng into array|itrte each elemnt|chck each elemnt|build new array w/ brl cnvrt
@@ -31,9 +32,20 @@ class NightWriter
         braille_translated << alpha.trans_braille[letter]
       end
     end
-    braille_translated
+    sort_out(braille_translated)
+  end
+
+  def sort_out(braille_translated)
+  line_1 = []
+  line_2 = []
+  line_3 = []
+
+  braille_translated.each do |letter|
+    line_1 << letter[0]
+    line_2 << letter[1]
+    line_3 << letter[2]
+  end
+  final_brl_transl = "#{line_1.join}\n#{line_2.join}\n#{line_3.join}"
   end
 
 end
-
-puts

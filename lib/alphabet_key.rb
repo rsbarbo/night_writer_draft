@@ -1,5 +1,5 @@
 class Alphabet
-  
+
   attr_reader :trans_braille
 
   def initialize
