@@ -14,12 +14,6 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_convert_two_letters_to_braille
-    result = @file.encode_to_braille("he")
-    assert_equal ["0.", "00", ".."], result.first
-    assert_equal ["0.", ".0", ".."], result.last
-  end
-
-  def test_convert_two_letters_to_braille
     assert_equal "0.0.\n00.0\n....", @file.encode_to_braille("he")
   end
 
