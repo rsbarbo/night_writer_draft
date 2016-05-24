@@ -16,7 +16,7 @@ class NightReader
   end
 
   #This method will call all the additional methods.
-  def encode_to_braille(input)
+  def encode_to_english(input)
     braille_array = check_input_vs_alphabet(input.split(''))
 
   end
