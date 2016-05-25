@@ -81,8 +81,9 @@ i 3
 
   check_num_shift
   so this will iterate through the array in english, will check if shift is in it
-  and if it is, the will drop the shift (replace with nil), and return the next letter in
-  capitalize.
+  and if it is, then will replace the shift with the character after it in capital,
+  will check next one for nil or letter, and if nil moves to the next one, and do the same
+  thing over and over again.
 
   trans_outcome.map.with_index do |letter, index|
   if letter == :shift

@@ -30,7 +30,7 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_for_double_special_characters_and_or_symbol
-    assert_equal "....\n000\n0.00", @file.encode_to_braille("!?")
+    assert_equal "....\n000.\n0.00", @file.encode_to_braille("!?")
   end
 
   def test_for_space_in_the_input

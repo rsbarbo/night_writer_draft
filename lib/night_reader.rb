@@ -46,10 +46,6 @@ class NightReader
         a[index + 1] = nil
       end
     end
-    # iterate through
-    # if letter == shift
-    # capitalize or use number
-    # but also drop the shift
   end
 
 end

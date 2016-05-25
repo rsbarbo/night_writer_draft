@@ -21,6 +21,11 @@ class NightWriter
 
   end
 
+  #english to braille
+  #if #, switch to numbers until a space is encountered
+  # # is always a switch to numbers
+  # space is always a switch to letters
+
   #cnvrt strng into array|itrte each elemnt|chck each elemnt|build new array w/ brl cnvrt
   def check_input_vs_alphabet(string_array)
     braille_translated = []
