@@ -37,4 +37,9 @@ class NightWriterTest < Minitest::Test
     assert_equal "..\n..\n..", @file.encode_to_braille(" ")
   end
 
+  def test_file_message_exits
+    assert_equal "..\n..\n..", @file.encode_to_braille(" ")
+    assert File.exist?("./message.txt")
+  end
+
 end
