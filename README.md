@@ -100,12 +100,14 @@ The project will be assessed with the following rubric:
 3: Application follows the complete spec and one extension
 2: Application converts to Braille and back successfully
 1: Application only converts to Braille or from Braille
+
 2. Fundamental Ruby & Style
 
 4: Application demonstrates excellent knowledge of Ruby syntax, style, and refactoring
 3: Application shows some effort toward organization but still has 6 or fewer long methods (> 8 lines) and needs some refactoring.
 2: Application runs but the code has many long methods (>8 lines) and needs significant refactoring
 1: Application generates syntax error or crashes during execution
+
 3. Test-Driven Development
 
 4: Application is broken into components which are well tested in both isolation and integration

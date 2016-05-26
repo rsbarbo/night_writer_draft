@@ -99,3 +99,10 @@ i 3
   end
   braille_lines_for_print.join
   end
+
+
+
+    #english to braille
+    #if #, switch to numbers until a space is encountered
+    # # is always a switch to numbers
+    # space is always a switch to letters

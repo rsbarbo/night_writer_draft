@@ -3,20 +3,36 @@ require './lib/alphabet_key'
 require './lib/file_reader'
 
 class NightReader
-
-  attr_reader :reader, :alphabet
+attr_reader :reader, :alphabet
 
   def initialize
     @reader = FileReader.new
     @alphabet = Alphabet.new
   end
 
-  def encode_to_english(input)
-    english_array = input.split("\n")
+  def encode_to_english(braille)
+    english_array = split_braille_into_three_indexes(braille)
     braille_array = sorting_out(english_array)
     @braille_alphabet = alphabet.trans_braille.invert
-    # binding.pry
     final_translation(braille_array).join
+  end
+
+  def split_braille_into_three_indexes(braille)
+    current_val = 0
+    other_val = 3
+    temp_array = []
+    temp_array = braille.split("\n")
+    @braille_message = []
+    until temp_array.count == 3
+      temp_array[current_val] += temp_array[other_val]
+      temp_array.delete_at(other_val)
+      if current_val == 2
+        current_val = 0
+      else
+        current_val += 1
+      end
+    end
+    @braille_message = temp_array
   end
 
   def sorting_out(english_array)
