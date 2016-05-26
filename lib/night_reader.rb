@@ -42,7 +42,7 @@ class NightReader
     end
     a.each.with_index do |letter, index|
       if letter == "shift"
-        a[index] =  a[index +1].upcase
+        a[index] =  a[index + 1].upcase
         a[index + 1] = nil
       end
     end

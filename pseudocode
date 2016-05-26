@@ -87,3 +87,15 @@ i 3
 
   trans_outcome.map.with_index do |letter, index|
   if letter == :shift
+
+  check_input_vs_alphabet(input.split(''))
+
+
+  def wrap_braille_lines_after_80_chars(final_brl_transl)
+  lines_split_80 = final_brl_transl.map {|line| line.scan(/.{1,80}/m)}
+  braille_lines_for_print = []
+  0.upto(lines_split_80[0].length-1) do |i|
+  braille_lines_for_print << lines_split_80[0][i] + "\n" + lines_split_80[1][i] + "\n" + lines_split_80[2][i] + "\n"
+  end
+  braille_lines_for_print.join
+  end

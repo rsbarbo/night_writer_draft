@@ -12,13 +12,16 @@ class NightWriter
 
   def encode_file_to_braille
     plain = reader.read
-    braille = encode_to_braille(plain)
+    encode_to_braille(plain)
   end
 
   #This method will call all the additional methods.
   def encode_to_braille(input)
-    braille_array = check_input_vs_alphabet(input.split(''))
-
+    result = []
+    input.split('').each_slice(80) do |eighty_chars|
+      result << check_input_vs_alphabet(eighty_chars)
+    end
+    result.join("\n")
   end
 
   #english to braille
@@ -50,7 +53,10 @@ class NightWriter
     line_2 << letter[1]
     line_3 << letter[2]
   end
-  final_brl_transl = "#{line_1.join}\n#{line_2.join}\n#{line_3.join}"
+  # something = line_1.zip(line_2, line_3)
+  # binding.pry
+  # other_thing = wrap_braille_lines_after_80_chars(thing)
+  "#{line_1.join}\n#{line_2.join}\n#{line_3.join}\n"
   end
 
 end
