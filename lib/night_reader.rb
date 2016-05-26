@@ -11,28 +11,28 @@ attr_reader :reader, :alphabet
   end
 
   def encode_to_english(braille)
-    english_array = split_braille_into_three_indexes(braille)
+    english_array = shrink_lines(braille)
     braille_array = sorting_out(english_array)
     @braille_alphabet = alphabet.trans_braille.invert
     final_translation(braille_array).join
   end
 
-  def split_braille_into_three_indexes(braille)
+  def shrink_lines(braille)
     current_val = 0
     other_val = 3
-    temp_array = []
-    temp_array = braille.split("\n")
+    new_array = []
+    new_array = braille.split("\n")
     @braille_message = []
-    until temp_array.count == 3
-      temp_array[current_val] += temp_array[other_val]
-      temp_array.delete_at(other_val)
+    until new_array.count == 3
+      new_array[current_val] += new_array[other_val]
+      new_array.delete_at(other_val)
       if current_val == 2
         current_val = 0
       else
         current_val += 1
       end
     end
-    @braille_message = temp_array
+    @braille_message = new_array
   end
 
   def sorting_out(english_array)
@@ -49,17 +49,17 @@ attr_reader :reader, :alphabet
     trans_outcome = braille_array.map do |braille_char|
       @braille_alphabet[braille_char]
     end
-    check_num_shift(trans_outcome)
+    check_shift(trans_outcome)
   end
 
-  def check_num_shift(trans_outcome)
-    a = trans_outcome.map do |letter|
+  def check_shift(trans_outcome)
+    sft_catcher = trans_outcome.map do |letter|
       letter.to_s
     end
-    a.each.with_index do |letter, index|
+    sft_catcher.each.with_index do |letter, index|
       if letter == "shift"
-        a[index] =  a[index + 1].upcase
-        a[index + 1] = nil
+        sft_catcher[index] =  sft_catcher[index + 1].upcase
+        sft_catcher[index + 1] = nil
       end
     end
   end

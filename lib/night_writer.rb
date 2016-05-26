@@ -15,6 +15,7 @@ attr_reader :reader, :alpha
     encode_to_braille(plain)
   end
 
+  #takes the string (end result sort_out braille) and break by characters (main source of testing)
   def encode_to_braille(input)
     result = []
     input.split('').each_slice(40) do |one_sixty_dots|
@@ -23,6 +24,7 @@ attr_reader :reader, :alpha
     result.join
   end
 
+  #makes the magic happen takes the input and check for caps, symb, low and shove into the array
   def check_input_vs_alphabet(string_array)
     braille_translated = []
     string_array.each do |letter|
@@ -36,6 +38,7 @@ attr_reader :reader, :alpha
     sort_out(braille_translated)
   end
 
+  #makes the transformation, by breaking out the lines and printing out.
   def sort_out(braille_translated)
   line_1 = []
   line_2 = []
